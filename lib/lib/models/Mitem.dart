@@ -4,11 +4,13 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import 'package:latihan_api/configs/constants.dart';
-import 'package:latihan_api/entities/Item.dart';
+import '../entities/Item.dart';
+
+import '../entities/Item.dart';
 
 class Mitem {
   Future<Item> selectById(int id) async {
-    var url = apiUrlAddress + "index.php/myapi/item_api?id" + id.toString();
+    var url = apiUrlAddress + id.toString();
 
     final response = await http.get(url);
 
@@ -25,36 +27,42 @@ class Mitem {
   }
 
   Future<int> insert(Item _object) async {
-    var url = apiUrlAddress + "index.php/myapi/item_api";
+    var url = apiUrlAddress;
     http.post(url, body: {
-      "item_code": _object.item_code,
-      "item_name": _object.item_name,
-      "price": _object.price,
-      "stock": _object.stock
+      "nim": _object.nim,
+      "nama": _object.name,
+      "jurusan": _object.jurusan,
+      "no_tlpn": _object.no_tlpn,
+      "agama": _object.agama,
+      "alamat": _object.alamat,
+      "jenis_kelamin": _object.jenis_kelamin
     });
     return 1;
   }
 
   Future<int> update(Item _object) async {
-    var url = apiUrlAddress + "index.php/myapi/item_api";
+    var url = apiUrlAddress;
     http.put(url, body: {
       "id": _object.id.toString(),
-      "item_code": _object.item_code,
-      "item_name": _object.item_name,
-      "price": _object.price,
-      "stock": _object.stock
+      "nim": _object.nim,
+      "nama": _object.name,
+      "jurusan": _object.jurusan,
+      "no_tlpn": _object.no_tlpn,
+      "agama": _object.agama,
+      "alamat": _object.alamat,
+      "jenis_kelamin": _object.jenis_kelamin
     });
     return 0;
   }
 
   Future<int> delete(int id) async {
-    var url = apiUrlAddress + "index.php/myapi/item_api_delete";
+    var url = apiUrlAddress;
     http.post(url, body: {'id': id});
     return 0;
   }
 
   Future<List<Item>> getList() async {
-    var url = apiUrlAddress + "index.php/myapi/item_api";
+    var url = apiUrlAddress;
     final response = await http.get(url);
 
     List<Item> objectList;

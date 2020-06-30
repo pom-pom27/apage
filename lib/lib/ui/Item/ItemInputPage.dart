@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_api/entities/Item.dart';
+import '../../entities/Item.dart';
+
+import '../../entities/Item.dart';
 
 class ItemInputPage extends StatefulWidget {
   final Item _item;
@@ -13,18 +15,26 @@ class ItemInputPageState extends State<ItemInputPage> {
   final _formKey = GlobalKey<FormState>();
   Item _item;
   ItemInputPageState(this._item);
-  var item_codeController = TextEditingController();
-  var item_nameController = TextEditingController();
-  var priceController = TextEditingController();
-  var stockController = TextEditingController();
+  var nim = TextEditingController();
+  var name = TextEditingController();
+  var tgl_lahir = TextEditingController();
+  var jurusan = TextEditingController();
+  var agama = TextEditingController();
+  var jenis_kelamin = TextEditingController();
+  var no_tlpn = TextEditingController();
+  var alamat = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     if (_item != null) {
-      item_codeController.text = _item.item_code;
-      item_nameController.text = _item.item_name;
-      priceController.text = _item.price;
-      stockController.text = _item.stock;
+      nim.text = _item.nim;
+      name.text = _item.name;
+      no_tlpn.text = _item.no_tlpn;
+      name.text = _item.name;
+      tgl_lahir.text = _item.tgl_lahir;
+      alamat.text = _item.alamat;
+      agama.text = _item.agama;
+      jurusan.text = _item.jurusan;
     }
     return Scaffold(
         appBar: AppBar(
@@ -38,9 +48,9 @@ class ItemInputPageState extends State<ItemInputPage> {
             child: new ListView(
               children: <Widget>[
                 new TextFormField(
-                  controller: item_codeController,
+                  controller: nim,
                   keyboardType: TextInputType.text,
-                  decoration: new InputDecoration(labelText: 'Item_Code'),
+                  decoration: new InputDecoration(labelText: 'Masukan Nama'),
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'Mohon Input Item_Code';
@@ -49,9 +59,9 @@ class ItemInputPageState extends State<ItemInputPage> {
                   },
                 ),
                 new TextFormField(
-                  controller: item_nameController,
+                  controller: name,
                   keyboardType: TextInputType.text,
-                  decoration: new InputDecoration(labelText: 'Item_Name'),
+                  decoration: new InputDecoration(labelText: 'Masukan no tlp'),
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'Mohon Input Item_Name';
@@ -60,23 +70,58 @@ class ItemInputPageState extends State<ItemInputPage> {
                   },
                 ),
                 new TextFormField(
-                  controller: priceController,
+                  controller: name,
                   keyboardType: TextInputType.text,
-                  decoration: new InputDecoration(labelText: 'Price'),
+                  decoration:
+                      new InputDecoration(labelText: 'Masukan jenis kelamin'),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Mohon Input Price';
+                      return 'Mohon Input Item_Name';
                     }
                     return null;
                   },
                 ),
                 new TextFormField(
-                  controller: stockController,
+                  controller: name,
                   keyboardType: TextInputType.text,
-                  decoration: new InputDecoration(labelText: 'Stock'),
+                  decoration:
+                      new InputDecoration(labelText: 'Masukan tgl Lahir'),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Mohon Input Stock';
+                      return 'Mohon Input Item_Name';
+                    }
+                    return null;
+                  },
+                ),
+                new TextFormField(
+                  controller: name,
+                  keyboardType: TextInputType.text,
+                  decoration: new InputDecoration(labelText: 'Masukan Jurusan'),
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Mohon Input Item_Name';
+                    }
+                    return null;
+                  },
+                ),
+                new TextFormField(
+                  controller: name,
+                  keyboardType: TextInputType.text,
+                  decoration: new InputDecoration(labelText: 'Masukan alamat'),
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Mohon Input Item_Name';
+                    }
+                    return null;
+                  },
+                ),
+                new TextFormField(
+                  controller: name,
+                  keyboardType: TextInputType.text,
+                  decoration: new InputDecoration(labelText: 'Masukan agama'),
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Mohon Input Item_Name';
                     }
                     return null;
                   },
@@ -88,22 +133,20 @@ class ItemInputPageState extends State<ItemInputPage> {
                       style: new TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      if (_formKey.currentState.validate()) {
-                        if (_item == null) {
-                          _item = new Item(
-                              id: 0,
-                              item_code: item_codeController.text,
-                              item_name: item_nameController.text,
-                              price: priceController.text,
-                              stock: stockController.text);
-                        } else {
-                          _item.item_code = item_codeController.text;
-                          _item.item_name = item_nameController.text;
-                          _item.price = priceController.text;
-                          _item.stock = stockController.text;
-                        }
-                        Navigator.pop(context, _item);
-                      }
+                      // // if (_item == null) {
+                      // //   _item = new Item(
+                      // //       id: 0,
+                      // //       item_code: nim.text,
+                      // //       item_name: name.text,
+                      // //       price: jurusan.text,
+                      // //       stock: stockController.text);
+                      // // } else {
+                      // //   _item.item_code = nim.text;
+                      // //   _item.item_name = name.text;
+                      // //   _item.price = jurusan.text;
+                      // //   _item.stock = stockController.text;
+                      // }
+                      // Navigator.pop(context, _item);
                     },
                     color: Colors.blue,
                   ),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_api/entities/Item.dart';
+import '../../entities/Item.dart';
 
 import 'dart:async';
 
-import 'package:latihan_api/models/Mitem.dart';
+import '../../models/Mitem.dart';
 import 'package:latihan_api/ui/fragment/MenuFragment.dart';
 
+import '../../entities/Item.dart';
+import '../../models/Mitem.dart';
 import 'ItemInputPage.dart';
 
 class ItemIndexPage extends StatefulWidget {
@@ -65,10 +67,10 @@ class ItemIndexPageState extends State<ItemIndexPage> {
               size: 45,
             ),
             title: Text(
-              this.itemList[index].item_code,
+              this.itemList[index].name,
               style: textStyle,
             ),
-            subtitle: Text(this.itemList[index].item_code),
+            subtitle: Text(this.itemList[index].nim),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () {

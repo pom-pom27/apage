@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_api/models/Mdictionary.dart';
+import '../../models/Mdictionary.dart';
 import 'package:latihan_api/entities/Dictionary.dart';
 import 'package:latihan_api/ui/fragment/MenuFragment.dart';
 import 'package:latihan_api/ui/Dictionary/DictionaryInputPage.dart';

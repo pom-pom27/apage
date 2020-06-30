@@ -1,18 +1,36 @@
 class Item {
   int id;
-  String item_code;
-  String item_name;
-  String price;
-  String stock;
+  String nim;
+  String jurusan;
+  String agama;
+  String jenis_kelamin;
+  String alamat;
+  String tgl_lahir;
+  String name;
+  String no_tlpn;
 
-  Item({this.id,this.item_code,this.item_name, this.price, this.stock});
+  Item({
+    this.id,
+    this.nim,
+    this.no_tlpn,
+    this.name,
+    this.tgl_lahir,
+    this.alamat,
+    this.jenis_kelamin,
+    this.agama,
+    this.jurusan,
+  });
 
   Item.fromMap(Map<String, dynamic> map) {
     this.id = map['id'];
-    this.item_code = map['item_code'];
-    this.item_name = map['item_name'];
-    this.price = map['price'];
-    this.stock = map['stock'];
+    this.nim = map['nim'];
+    this.no_tlpn = map['no_tlpn'];
+    this.name = map['name'];
+    this.tgl_lahir = map['tgl_lahir'];
+    this.alamat = map['alamat'];
+    this.jenis_kelamin = map['jenis_kelamin'];
+    this.agama = map['agama'];
+    this.jurusan = map['jurusan'];
   }
 
   String get description => null;
@@ -20,20 +38,28 @@ class Item {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'item_code': item_code,
-      'item_name': item_name,
-      'price': price,
-      'stock': stock
+      'nim': nim,
+      'no_tlpn': no_tlpn,
+      'name': name,
+      'tgl_lahir': tgl_lahir,
+      'alamat': alamat,
+      'jenis_kelamin': jenis_kelamin,
+      'agama': agama,
+      'jurusan': jurusan,
     };
   }
 
   static Item fromJson(json) {
     var object = new Item();
     object.id = int.parse(json['id']);
-    object.item_code = json['item_code'];
-    object.item_name = json['item_name'];
-    object.price = json['price'];
-    object.stock = json['stock'];
+    object.nim = json['nim'];
+    object.no_tlpn = json['no_tlpn'];
+    object.name = json['name'];
+    object.tgl_lahir = json['tgl_lahir'];
+    object.alamat = json['alamat'];
+    object.jenis_kelamin = json['jenis_kelamin'];
+    object.agama = json['agama'];
+    object.jurusan = json['jurusan'];
     return object;
   }
 }

@@ -6,6 +6,8 @@ import 'package:latihan_api/ui/Dictionary/DictionaryIndexPage.dart';
 import 'package:latihan_api/ui/Login/LoginIndexPage.dart';
 import 'package:latihan_api/ui/Home/HomeIndexPage.dart';
 
+import '../lib/ui/Item/ItemIndexPage.dart';
+
 // Anda dapat menelusuri alur coding dengan
 // melakukan klik kanan Go to Definition (F12) pada:
 // - LoginIndexPage()
@@ -16,4 +18,5 @@ final routesMap = {
   '/Login': (BuildContext context) => new LoginIndexPage(),
   '/Home': (BuildContext context) => new HomeIndexPage(),
   '/Dictionary': (BuildContext context) => new DictionaryIndexPage(),
+  '/Item': (BuildContext context) => new ItemIndexPage(),
 };

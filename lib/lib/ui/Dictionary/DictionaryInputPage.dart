@@ -37,7 +37,8 @@ class DictionaryInputPageState extends State<DictionaryInputPage> {
                 new TextFormField(
                   controller: wordController,
                   keyboardType: TextInputType.text,
-                  decoration: new InputDecoration(labelText: 'Word'),
+                  decoration:
+                      new InputDecoration(labelText: 'masukan nama anda'),
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'Mohon input Word';
@@ -48,7 +49,7 @@ class DictionaryInputPageState extends State<DictionaryInputPage> {
                 new TextFormField(
                   controller: descriptionController,
                   keyboardType: TextInputType.text,
-                  decoration: new InputDecoration(labelText: 'Description'),
+                  decoration: new InputDecoration(labelText: 'masukan nim'),
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'Mohon input Description';
@@ -63,18 +64,16 @@ class DictionaryInputPageState extends State<DictionaryInputPage> {
                       style: new TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      if (_formKey.currentState.validate()) {
-                        if (_dictionary == null) {
-                          _dictionary = new Dictionary(
-                              id: 0,
-                              word: wordController.text,
-                              description: descriptionController.text);
-                        } else {
-                          _dictionary.word = wordController.text;
-                          _dictionary.description = descriptionController.text;
-                        }
-                        Navigator.pop(context, _dictionary);
+                      if (_dictionary == null) {
+                        _dictionary = new Dictionary(
+                            id: 0,
+                            word: wordController.text,
+                            description: descriptionController.text);
+                      } else {
+                        _dictionary.word = wordController.text;
+                        _dictionary.description = descriptionController.text;
                       }
+                      Navigator.pop(context, _dictionary);
                     },
                     color: Colors.blue,
                   ),

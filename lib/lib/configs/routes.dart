@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:latihan_api/ui/DefaultPage.dart';
 import 'package:latihan_api/ui/Dictionary/DictionaryIndexPage.dart';
 import 'package:latihan_api/ui/Home/HomeIndexPage.dart';
-import 'package:latihan_api/ui/Item/ItemIndexPage.dart';
+import '.././ui/Item/ItemIndexPage.dart';
 import 'package:latihan_api/ui/Login/LoginIndexPage.dart';
+
+import '../ui/Item/ItemIndexPage.dart';
 
 final routesMap = {
   '/': (BuildContext context) => new DefaultPage(),

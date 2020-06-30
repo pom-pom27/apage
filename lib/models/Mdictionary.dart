@@ -20,7 +20,7 @@ class Mdictionary {
   // Insert dictionary ke:
   // http://jerrysibarani.com/jerryns777/index.php/myapi/kamus_api
   Future<int> insert(Dictionary _object) async {
-    var url = apiUrlAddress + "index.php/myapi/kamus_api";
+    var url = apiUrlAddress;
     http.post(url,
         body: {"word": _object.word, "description": _object.description});
     return 1;
@@ -29,7 +29,7 @@ class Mdictionary {
   // Update dictionary ke:
   // http://jerrysibarani.com/jerryns777/index.php/myapi/kamus_api
   Future<int> update(Dictionary _object) async {
-    var url = apiUrlAddress + "index.php/myapi/kamus_api";
+    var url = apiUrlAddress;
     http.put(url, body: {
       "id": _object.id.toString(),
       "word": _object.word,
@@ -40,7 +40,7 @@ class Mdictionary {
 
   // Delete dictionary
   Future<int> delete(int id) async {
-    var url = apiUrlAddress + "index.php/myapi/kamus_api_delete";
+    var url = apiUrlAddress;
     http.post(url, body: {'id': id});
     return 0;
   }
@@ -48,7 +48,7 @@ class Mdictionary {
   // Get List dari:
   // http://jerrysibarani.com/jerryns777/index.php/myapi/kamus_api
   Future<List<Dictionary>> getList() async {
-    var url = apiUrlAddress + "index.php/myapi/kamus_api";
+    var url = apiUrlAddress;
     final response = await http.get(url);
 
     // Mapping dari json ke entity list
